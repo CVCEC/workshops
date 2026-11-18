@@ -20,6 +20,12 @@
 body{margin:0;background:#F4EDE1}
 a{color:#B3261E}a:hover{color:#8A1C15}
 html{scroll-behavior:smooth}
+html[data-lang="en"] [data-l="vi"],html[data-lang="vi"] [data-l="en"],[data-l="sep"]{display:none!important}
+.lang-switch{display:inline-flex;border:1.5px solid #1F1B16;border-radius:999px;overflow:hidden;font-size:14px;font-weight:600}
+.lang-switch button{font:inherit;border:0;background:transparent;color:#1F1B16;padding:7px 13px;cursor:pointer;min-height:36px}
+.lang-switch button[aria-pressed="true"]{background:#1F1B16;color:#F4EDE1}
+#learn-body[hidden]{display:none!important}
+.learn-toggle{font:inherit;font-weight:600;font-size:17px;background:#1F1B16;color:#F4EDE1;border:0;border-radius:4px;padding:14px 22px;cursor:pointer;min-height:44px;align-self:flex-start}
 </style>
 </head>
 <body>
@@ -35,14 +41,15 @@ html{scroll-behavior:smooth}
 <span style="font-size: 13px; line-height: 1.35; color: #5E544A">Co-organized<br><span lang="vi">Đồng tổ chức</span></span>
 </a>
 <nav aria-label="Page sections" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 22px; font-size: 15px; font-weight: 500">
-<a href="#thanh-lieu" style="color: #1F1B16; text-decoration: none">Thanh Liễu</a>
-<a href="#process" style="color: #1F1B16; text-decoration: none">Process</a>
-<a href="#programme" style="color: #1F1B16; text-decoration: none">Programme</a>
-<a href="#zodiac" style="color: #1F1B16; text-decoration: none">Zodiac</a>
-<a href="#artisan" style="color: #1F1B16; text-decoration: none">Artisan</a>
-<a href="#shop" style="color: #1F1B16; text-decoration: none">Shop</a>
-<a href="#learn" style="color: #1F1B16; text-decoration: none">Learn Vietnamese</a>
+<a href="#thanh-lieu" style="color: #1F1B16; text-decoration: none"><span data-l="en">Thanh Liễu</span><span data-l="vi" lang="vi">Thanh Liễu</span></a>
+<a href="#process" style="color: #1F1B16; text-decoration: none"><span data-l="en">Process</span><span data-l="vi" lang="vi">Quy trình</span></a>
+<a href="#programme" style="color: #1F1B16; text-decoration: none"><span data-l="en">Programme</span><span data-l="vi" lang="vi">Chương trình</span></a>
+<a href="#zodiac" style="color: #1F1B16; text-decoration: none"><span data-l="en">Zodiac</span><span data-l="vi" lang="vi">Con giáp</span></a>
+<a href="#artisan" style="color: #1F1B16; text-decoration: none"><span data-l="en">Artisan</span><span data-l="vi" lang="vi">Nghệ nhân</span></a>
+<a href="#shop" style="color: #1F1B16; text-decoration: none"><span data-l="en">Shop</span><span data-l="vi" lang="vi">Sản phẩm</span></a>
+<a href="#learn" style="color: #1F1B16; text-decoration: none"><span data-l="en">Learn Vietnamese</span><span data-l="vi" lang="vi">Học tiếng Việt</span></a>
 <a href="#register" style="background: #B3261E; color: #FFFFFF; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600">Register · <span lang="vi">Đăng ký</span></a>
+<div class="lang-switch" role="group" aria-label="Language · Ngôn ngữ"><button type="button" data-setlang="en" aria-pressed="true">EN</button><button type="button" data-setlang="vi" aria-pressed="false">VI</button></div>
 </nav>
 </div>
 </header>
@@ -55,7 +62,8 @@ html{scroll-behavior:smooth}
 <span style="font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #5E544A">Woodblock workshop for international friends<br><span lang="vi">Workshop mộc bản cho bạn bè quốc tế</span></span>
 </div>
 <h1 lang="vi" style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 700; font-size: clamp(56px, 7.5vw, 112px); line-height: 1.08; letter-spacing: -1px">12 Con Giáp</h1>
-<p style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; color: #B3261E">The Vietnamese zodiac, printed by hand</p>
+<p data-l="en" style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; color: #B3261E">The Vietnamese zodiac, printed by hand</p>
+<p data-l="vi" lang="vi" style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: clamp(24px, 2.6vw, 34px); line-height: 1.25; color: #B3261E">Con giáp Việt Nam, tự tay in mộc bản</p>
 <p style="margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; max-width: 580px">Join artisan Nguyễn Công Đạt of Thanh Liễu, Vietnam’s historic woodblock-printing village. Ink a hand-carved block, pull a print of your zodiac animal, hear the story of the 12 animals, and pick up your first Vietnamese words along the way.</p>
 <p lang="vi" style="margin: 0; font-size: 16px; color: #5E544A; max-width: 580px">Cùng nghệ nhân Nguyễn Công Đạt của làng Thanh Liễu phết mực, in tranh con giáp của bạn trên ván khắc sẵn, nghe chuyện 12 con giáp và học những từ tiếng Việt đầu tiên.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; padding: 20px 0; border-top: 1px solid #DCCFBC; border-bottom: 1px solid #DCCFBC; max-width: 580px">
@@ -78,7 +86,7 @@ html{scroll-behavior:smooth}
 </div>
 <div style="display: flex; flex-wrap: wrap; gap: 12px">
 <a href="#register" style="background: #B3261E; color: #FFFFFF; text-decoration: none; padding: 15px 26px; border-radius: 4px; font-weight: 600; font-size: 17px; min-height: 44px; box-sizing: border-box">Register · <span lang="vi">Đăng ký</span></a>
-<a href="#zodiac" style="border: 1.5px solid #1F1B16; color: #1F1B16; text-decoration: none; padding: 14px 24px; border-radius: 4px; font-weight: 600; font-size: 17px; min-height: 44px; box-sizing: border-box">Find your animal</a>
+<a href="#zodiac" style="border: 1.5px solid #1F1B16; color: #1F1B16; text-decoration: none; padding: 14px 24px; border-radius: 4px; font-weight: 600; font-size: 17px; min-height: 44px; box-sizing: border-box"><span data-l="en">Find your animal</span><span data-l="vi" lang="vi">Tìm con giáp của bạn</span></a>
 </div>
 </div>
 <div style="flex: 1 1 420px; min-width: 0; position: relative; padding-bottom: 56px">
@@ -123,10 +131,10 @@ html{scroll-behavior:smooth}
 <span lang="vi" style="font-size: 14px; color: #5E544A">Nghệ nhân Nguyễn Huy Vượng khắc in mộc bản trường học Phúc Giang.</span>
 </div>
 <div style="background: #1F1B16; color: #F4EDE1; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 8px">
-<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 40px; line-height: 1.1; color: #D9A93F">~30 steps</span>
+<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 40px; line-height: 1.1; color: #D9A93F"><span data-l="en">~30 steps</span><span data-l="vi" lang="vi">~30 công đoạn</span></span>
 <span style="font-size: 15px">to make one woodblock, from choosing and soaking the wood to carving and printing.</span>
 <span lang="vi" style="font-size: 14px; color: #CFC4B4">khoảng 30 công đoạn để làm một tấm mộc bản.</span>
-<a href="#process" style="margin-top: 4px; font-size: 15px; font-weight: 600; color: #D9A93F">See the six main stages ↓</a>
+<a href="#process" style="margin-top: 4px; font-size: 15px; font-weight: 600; color: #D9A93F"><span data-l="en">See the six main stages ↓</span><span data-l="vi" lang="vi">Xem sáu công đoạn chính ↓</span></a>
 </div>
 </div>
 </div>
@@ -354,26 +362,27 @@ html{scroll-behavior:smooth}
 <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
 <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #B3261E">The artisan · <span lang="vi">Nghệ nhân</span></p>
 <h2 lang="vi" style="margin: 0; font-family: 'Noto Serif', serif; font-weight: 700; font-size: clamp(34px, 4vw, 52px); line-height: 1.18">Nguyễn Công Đạt</h2>
-<p style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: 20px; color: #B3261E">Woodblock artisan of Thanh Liễu village</p>
+<p data-l="en" style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: 20px; color: #B3261E">Woodblock artisan of Thanh Liễu village</p>
+<p data-l="vi" lang="vi" style="margin: -6px 0 0; font-family: 'Noto Serif', serif; font-style: italic; font-weight: 500; font-size: 20px; color: #B3261E">Nghệ nhân mộc bản làng Thanh Liễu</p>
 <p style="margin: 0">Born in 1992 in Thanh Liễu, Đạt is the 17th generation of carvers in the Nguyễn Công family. As a child he learned to carve and print seals from his uncle and village artisans; after studying interior design at Hanoi Open University, he taught himself Hán Nôm, the classical script, to read old woodblocks.</p>
 <p style="margin: 0">Since 2010 he has searched pagodas across northern Vietnam for the work of his village’s carvers, identifying more than 250 Thanh Liễu artisans who carved or printed Buddhist texts between 1698 and 1945. In 2023 he co-founded a village woodblock association that runs free workshops for young people.</p>
 <p lang="vi" style="margin: 0; font-size: 16px; color: #5E544A">Sinh năm 1992, đời thứ 17 của dòng họ Nguyễn Công theo nghề khắc in. Từ năm 2010, anh đi khắp các chùa miền Bắc tìm lại tên hơn 250 nghệ nhân Thanh Liễu từng khắc, in kinh sách (1698–1945). Năm 2023, anh cùng sáng lập hội khắc in mộc bản của làng, mở các buổi trải nghiệm miễn phí cho người trẻ.</p>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; padding-top: 16px; border-top: 1px solid #DCCFBC">
 <div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E">17th</span>
-<span style="font-size: 14px; color: #5E544A">generation of carvers in his family · <span lang="vi">đời thứ 17</span></span>
+<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E"><span data-l="en">17th</span><span data-l="vi" lang="vi">Đời 17</span></span>
+<span style="font-size: 14px; color: #5E544A">generation of carvers in his family · <span lang="vi">thợ khắc trong dòng họ</span></span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E">250+</span>
-<span style="font-size: 14px; color: #5E544A">village artisans (1698–1945) traced by name</span>
+<span style="font-size: 14px; color: #5E544A"><span data-l="en">village artisans (1698–1945) traced by name</span><span data-l="vi" lang="vi">nghệ nhân của làng (1698–1945) được tìm lại tên</span></span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px">
 <span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E">2024</span>
-<span style="font-size: 14px; color: #5E544A">speaker, 10th IAPW International Woodblock Conference, VNU Hà Nội</span>
+<span style="font-size: 14px; color: #5E544A"><span data-l="en">speaker, 10th IAPW International Woodblock Conference, VNU Hà Nội</span><span data-l="vi" lang="vi">diễn giả Hội thảo Quốc tế Mộc bản IAPW lần thứ 10, ĐHQG Hà Nội</span></span>
 </div>
 <div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E">3rd prize</span>
-<span style="font-size: 14px; color: #5E544A">Global Crafts Competition, Hanoi 2026 · <span lang="vi">Giải Ba</span></span>
+<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 28px; line-height: 1.2; color: #B3261E"><span data-l="en">3rd prize</span><span data-l="vi" lang="vi">Giải Ba</span></span>
+<span style="font-size: 14px; color: #5E544A"><span data-l="en">Global Crafts Competition, Hanoi 2026</span><span data-l="vi" lang="vi">Cuộc thi Sản phẩm thủ công toàn cầu, Hà Nội 2026</span></span>
 </div>
 </div>
 </div>
@@ -410,28 +419,32 @@ html{scroll-behavior:smooth}
 <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto">
 <h3 style="margin: 0; font-size: 19px; font-weight: 700">Zodiac prints</h3>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #CFC4B4">Tranh 12 con giáp</p>
-<p style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Woodblock prints on dó paper, one animal or the full set of 12. A meaningful gift for Tết 2027, the Year of the Goat.</p></div>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Woodblock prints on dó paper, one animal or the full set of 12. A meaningful gift for Tết 2027, the Year of the Goat.</p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Tranh mộc bản trên giấy dó, một con hoặc trọn bộ 12 con giáp. Món quà ý nghĩa cho Tết 2027, năm Đinh Mùi.</p></div>
 </div>
 <div style="border: 1px solid #4A423A; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
 <img src="assets/scrolls-set.jpg" alt="Four small brocade hanging scrolls, each with an auspicious character printed in vermilion" style="display: block; width: 100%; height: 220px; object-fit: cover">
 <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto">
 <h3 style="margin: 0; font-size: 19px; font-weight: 700">Small hanging scrolls</h3>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #CFC4B4">Tranh cuộn nhỏ treo tường</p>
-<p style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Auspicious characters printed in vermilion and mounted on brocade, ready to hang at home.</p></div>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Auspicious characters printed in vermilion and mounted on brocade, ready to hang at home.</p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Chữ cát tường in mực chu sa, bồi trên gấm, sẵn sàng treo trong nhà.</p></div>
 </div>
 <div style="border: 1px solid #4A423A; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
 <img src="assets/name-seals.jpg" alt="Hand-carved wooden name seals in Vietnamese and English, with red stamped impressions" style="display: block; width: 100%; height: 220px; object-fit: cover">
 <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto">
 <h3 style="margin: 0; font-size: 19px; font-weight: 700">Hand-carved name seal</h3>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #CFC4B4">Con dấu tên khắc tay</p>
-<p style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Your name carved in English or Vietnamese. Order when you register so the artisan has time to carve it.</p></div>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Your name carved in English or Vietnamese. Order when you register so the artisan has time to carve it.</p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Tên bạn khắc bằng tiếng Anh hoặc tiếng Việt. Đặt khi đăng ký để nghệ nhân có thời gian khắc.</p></div>
 </div>
 <div style="border: 1px solid #4A423A; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
 <img src="assets/hands-carving.jpg" alt="A woodblock being carved by hand" style="display: block; width: 100%; height: 220px; object-fit: cover">
 <div style="padding: 22px; display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto">
 <h3 style="margin: 0; font-size: 19px; font-weight: 700">Carved woodblock</h3>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #CFC4B4">Ván khắc mộc bản</p>
-<p style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">A hand-carved block to print with or display as a piece of art.</p></div>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">A hand-carved block to print with or display as a piece of art.</p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px; color: #CFC4B4">Ván khắc tay để in hoặc trưng bày như một tác phẩm nghệ thuật.</p></div>
 </div>
 </div>
 </div>
@@ -452,6 +465,8 @@ html{scroll-behavior:smooth}
 <p style="margin: 8px 0 0; font-size: 13px; color: #5E544A">Audio uses your device’s built-in Vietnamese voice. · <span lang="vi">Giọng đọc dùng giọng tiếng Việt có sẵn trên máy của bạn.</span></p>
 </div>
 </div>
+<button type="button" class="learn-toggle" id="learn-toggle" aria-expanded="false" aria-controls="learn-body"><span data-l="en">Open the exercises ▾</span><span data-l="vi" lang="vi">Mở bài tập ▾</span></button>
+<div id="learn-body" hidden style="display: flex; flex-direction: column; gap: 40px">
 
 <!--slot:3--><!--/slot:3-->
 
@@ -461,7 +476,8 @@ html{scroll-behavior:smooth}
 <span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E">Exercise 1 · <span lang="vi">Bài 1</span></span>
 <h3 style="margin: 4px 0 0; font-size: 22px; font-weight: 700">Fill in the verb: how a print is made</h3>
 <p lang="vi" style="margin: 2px 0 0; font-size: 15px; color: #5E544A">Điền động từ vào chỗ trống: quy trình làm tranh mộc bản</p>
-<p style="margin: 10px 0 0; font-size: 15px">Drag each verb into its sentence, or tap a verb and then tap a blank. Tap a filled blank to take the verb back. Steps 4 to 7 are the ones you do yourself at the workshop.</p>
+<p data-l="en" style="margin: 10px 0 0; font-size: 15px">Drag each verb into its sentence, or tap a verb and then tap a blank. Tap a filled blank to take the verb back. Steps 4 to 7 are the ones you do yourself at the workshop.</p>
+<p data-l="vi" lang="vi" style="margin: 10px 0 0; font-size: 15px">Kéo từng động từ vào câu, hoặc chạm vào động từ rồi chạm vào chỗ trống. Chạm vào ô đã điền để lấy lại từ. Bước 4 đến 7 là những việc bạn tự làm tại workshop.</p>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 10px">
@@ -489,7 +505,8 @@ html{scroll-behavior:smooth}
 <span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E">Exercise 2 · <span lang="vi">Bài 2</span></span>
 <h3 style="margin: 4px 0 0; font-size: 22px; font-weight: 700">Match the words from the workshop</h3>
 <p lang="vi" style="margin: 2px 0 0; font-size: 15px; color: #5E544A">Nối từ tiếng Việt với nghĩa tiếng Anh</p>
-<p style="margin: 10px 0 0; font-size: 15px">Tap a Vietnamese word to hear it, then tap its English meaning. On a computer you can also drag the word onto its meaning.</p>
+<p data-l="en" style="margin: 10px 0 0; font-size: 15px">Tap a Vietnamese word to hear it, then tap its English meaning. On a computer you can also drag the word onto its meaning.</p>
+<p data-l="vi" lang="vi" style="margin: 10px 0 0; font-size: 15px">Chạm vào từ tiếng Việt để nghe, rồi chạm vào nghĩa tiếng Anh. Trên máy tính, bạn cũng có thể kéo từ thả vào nghĩa.</p>
 </div>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px">
 <div role="group" aria-label="Vietnamese words" style="display: flex; flex-direction: column; gap: 10px">
@@ -514,16 +531,19 @@ html{scroll-behavior:smooth}
 </div>
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
 <div style="background: #F4EDE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E">Lesson 3</span>
+<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E"><span data-l="en">Lesson 3</span><span data-l="vi" lang="vi">Bài 3</span></span>
 <h4 style="margin: 0; font-size: 19px; font-weight: 700">The zodiac story in simple Vietnamese</h4>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #5E544A">Chuyện 12 con giáp bằng tiếng Việt dễ hiểu</p>
-<p style="margin: 4px 0 0; font-size: 15px">The great river race, told in short bilingual sentences with audio: who was clever, who was honest, who came late, and how the 12 animals got their order.</p>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px">The great river race, told in short bilingual sentences with audio: who was clever, who was honest, who came late, and how the 12 animals got their order.</p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px">Chuyện cuộc đua qua sông, kể bằng những câu song ngữ ngắn có audio: ai thông minh, ai thật thà, ai đến muộn, và 12 con giáp được xếp thứ tự thế nào.</p>
 </div>
 <div style="background: #F4EDE1; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E">Lesson 4</span>
+<span style="font-family: 'Noto Serif', serif; font-weight: 700; font-size: 20px; color: #B3261E"><span data-l="en">Lesson 4</span><span data-l="vi" lang="vi">Bài 4</span></span>
 <h4 style="margin: 0; font-size: 19px; font-weight: 700">What each animal means</h4>
 <p lang="vi" style="margin: 0; font-size: 14px; color: #5E544A">Ý nghĩa mỗi con giáp</p>
-<p style="margin: 4px 0 0; font-size: 15px">Character, symbols and wishes linked to each animal in Vietnamese life, plus how to say your own: <strong lang="vi">“Tôi tuổi Mèo.”</strong></p>
+<p data-l="en" style="margin: 4px 0 0; font-size: 15px">Character, symbols and wishes linked to each animal in Vietnamese life, plus how to say your own: <strong lang="vi">“Tôi tuổi Mèo.”</strong></p>
+<p data-l="vi" lang="vi" style="margin: 4px 0 0; font-size: 15px">Tính cách, biểu tượng và lời chúc gắn với từng con giáp trong đời sống người Việt, và cách nói tuổi của bạn: <strong>“Tôi tuổi Mèo.”</strong></p>
+</div>
 </div>
 </div>
 </div>
@@ -545,13 +565,13 @@ html{scroll-behavior:smooth}
 <a href="https://forms.gle/tadXrZBB4CwsFbQE7" target="_blank" rel="noopener" style="font-size: 14px; color: #8A1C15">forms.gle/tadXrZBB4CwsFbQE7</a>
 </div>
 <div style="margin-top: 12px; padding: 18px 20px; border: 1.5px solid #B3261E; border-radius: 6px; background: #FBEDE8; display: flex; flex-direction: column; gap: 6px; overflow-wrap: anywhere">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #B3261E">Payment · <span lang="vi">Chuyển khoản</span></p>
-<p style="margin: 0; font-size: 15px">Please transfer 200,000 VND per person when you register. Your seat is confirmed once payment is received.</p>
-<p lang="vi" style="margin: 0; font-size: 15px; color: #5E544A">Vui lòng chuyển khoản 200.000đ/người ngay khi đăng ký. Chỗ được giữ khi BTC nhận được tiền.</p>
-<p style="margin: 6px 0 0">Bank · <span lang="vi">Ngân hàng</span>: <strong>MB Bank</strong> <span lang="vi" style="color: #5E544A">(Ngân hàng Quân đội)</span></p>
-<p style="margin: 0">Account no. · <span lang="vi">Số tài khoản</span>: <strong style="font-size: 20px; letter-spacing: 0.5px; white-space: nowrap">0902236658</strong></p>
-<p style="margin: 0">Account name · <span lang="vi">Người thụ hưởng</span>: <strong lang="vi">PHAN THỊ QUỲNH TRANG</strong></p>
-<p style="margin: 0">Transfer note · <span lang="vi">Nội dung</span>: <strong>WS0612 + your name + phone</strong> <span lang="vi" style="color: #5E544A">· WS0612 + họ tên + SĐT</span></p>
+<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: #B3261E"><span data-l="en">Payment</span><span data-l="vi" lang="vi">Chuyển khoản</span></p>
+<p data-l="en" style="margin: 0; font-size: 15px">Please transfer 200,000 VND per person when you register. Your seat is confirmed once payment is received.</p>
+<p data-l="vi" lang="vi" style="margin: 0; font-size: 15px">Vui lòng chuyển khoản 200.000đ/người ngay khi đăng ký. Chỗ được giữ khi BTC nhận được tiền.</p>
+<p style="margin: 6px 0 0"><span data-l="en">Bank</span><span data-l="vi" lang="vi">Ngân hàng</span>: <strong>MB Bank</strong> <span lang="vi" style="color: #5E544A">(Ngân hàng Quân đội)</span></p>
+<p style="margin: 0"><span data-l="en">Account no.</span><span data-l="vi" lang="vi">Số tài khoản</span>: <strong style="font-size: 20px; letter-spacing: 0.5px; white-space: nowrap">0902236658</strong></p>
+<p style="margin: 0"><span data-l="en">Account name</span><span data-l="vi" lang="vi">Người thụ hưởng</span>: <strong lang="vi">PHAN THỊ QUỲNH TRANG</strong></p>
+<p style="margin: 0"><span data-l="en">Transfer note: <strong>WS0612 + your name + phone</strong></span><span data-l="vi" lang="vi">Nội dung: <strong>WS0612 + họ tên + SĐT</strong></span></p>
 </div>
 </div>
 <dl style="flex: 1 1 360px; min-width: 0; margin: 0; display: grid; grid-template-columns: minmax(120px, auto) minmax(0, 1fr); gap: 14px 20px; align-content: start">
@@ -969,6 +989,137 @@ function boot() {
     if (img.complete && img.naturalWidth === 0) hide();
   });
   if (typeof comp.componentDidMount === "function") comp.componentDidMount();
+}
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
+})();
+</script>
+<script>
+(function () {
+"use strict";
+var BLOCK = /^(P|H1|H2|H3|H4|H5|H6|DIV|LI|FIGCAPTION|DD|DT)$/;
+function isWs(n){ return n && n.nodeType === 3 && !/\S/.test(n.nodeValue); }
+function prevNonWs(n){ var p = n.previousSibling; while (isWs(p)) p = p.previousSibling; return p; }
+function wrapBefore(el, stopAtBr){
+  var nodes = [], p = el.previousSibling;
+  while (p && !(p.nodeType === 1 && p.tagName === "BR") && !(p.nodeType === 8)) { nodes.unshift(p); p = p.previousSibling; }
+  if (!nodes.length) return null;
+  var w = document.createElement("span"); w.setAttribute("data-l", "en");
+  el.parentNode.insertBefore(w, nodes[0]);
+  nodes.forEach(function (n) { w.appendChild(n); });
+  return { wrap: w, br: p && p.nodeType === 1 && p.tagName === "BR" ? p : null };
+}
+function stripTrailingDot(w){
+  var t = w.lastChild;
+  while (t && t.nodeType === 3) {
+    var v = t.nodeValue.replace(/\s*·\s*$/, "").replace(/\s+$/, "");
+    if (v !== t.nodeValue) { t.nodeValue = v; return; }
+    t = t.previousSibling;
+  }
+}
+function stripLeadingDot(el){
+  var t = el.firstChild;
+  if (t && t.nodeType === 3) t.nodeValue = t.nodeValue.replace(/^\s*·\s*/, "");
+}
+function handle(el){
+  if (el.hasAttribute("data-l") || el.hasAttribute("data-lp")) return;
+  if (el.closest("[data-l]") && el.closest("[data-l]") !== el) return;
+  el.setAttribute("data-lp", "1");
+  var prev = el.previousSibling;
+  var txt = el.textContent || "";
+  // inline: "English · <span lang=vi>Việt</span>"
+  if (prev && prev.nodeType === 3 && /·\s*$/.test(prev.nodeValue) && !BLOCK.test(el.tagName)) {
+    var r = wrapBefore(el); if (r) { stripTrailingDot(r.wrap); el.setAttribute("data-l", "vi"); }
+    return;
+  }
+  // inline: "English <span lang=vi>· Việt</span>"
+  if (/^\s*·/.test(txt) && !BLOCK.test(el.tagName)) {
+    var r2 = wrapBefore(el); stripLeadingDot(el);
+    if (r2) el.setAttribute("data-l", "vi"); else el.setAttribute("data-l", "vi");
+    return;
+  }
+  // inline after <br>: "English<br><span lang=vi>Việt</span>"
+  var pn = prevNonWs(el);
+  if (pn && pn.nodeType === 1 && pn.tagName === "BR" && !BLOCK.test(el.tagName)) {
+    var tmp = pn.previousSibling;
+    if (tmp && (tmp.nodeType === 3 ? /\S/.test(tmp.nodeValue) : !tmp.hasAttribute("lang"))) {
+      var nodes = [], q = pn.previousSibling;
+      while (q && !(q.nodeType === 1 && q.tagName === "BR")) { nodes.unshift(q); q = q.previousSibling; }
+      var w = document.createElement("span"); w.setAttribute("data-l", "en");
+      el.parentNode.insertBefore(w, nodes[0]); nodes.forEach(function (n) { w.appendChild(n); });
+      pn.setAttribute("data-l", "sep"); el.setAttribute("data-l", "vi");
+    }
+    return;
+  }
+  // heading + span subtitle, or flex-column span pairs
+  if (!BLOCK.test(el.tagName)) {
+    var E = el.previousElementSibling;
+    if (E && pn === E && !E.hasAttribute("lang") && !E.hasAttribute("data-l") && !E.querySelector("[lang],[data-l]")) {
+      if (/^H[1-6]$/.test(E.tagName)) {
+        E.setAttribute("data-en-html", E.innerHTML); E.setAttribute("data-vi-html", el.innerHTML); E.setAttribute("data-swap", "1");
+        el.setAttribute("data-l", "sep"); applySwap(E); return;
+      }
+      var pd = getComputedStyle(el.parentNode);
+      if (E.tagName === el.tagName && pd.display.indexOf("flex") >= 0 && pd.flexDirection === "column") { E.setAttribute("data-l", "en"); el.setAttribute("data-l", "vi"); return; }
+    }
+    return;
+  }
+  // block pair: <p>English</p><p lang=vi>Việt</p>  or  <hN>English</hN><p lang=vi>subtitle</p>
+  if (BLOCK.test(el.tagName)) {
+    var P = el.previousElementSibling;
+    if (!P || P.hasAttribute("lang") || P.hasAttribute("data-l")) return;
+    if (/^H[1-6]$/.test(P.tagName) && el.tagName === "P") {
+      P.setAttribute("data-en-html", P.innerHTML);
+      P.setAttribute("data-vi-html", el.innerHTML);
+      P.setAttribute("data-swap", "1");
+      el.setAttribute("data-l", "sep");
+      applySwap(P);
+      return;
+    }
+    if (P.tagName === el.tagName) {
+      el.setAttribute("data-l", "vi");
+      var q = P;
+      while (q && q.tagName === el.tagName && !q.hasAttribute("lang") && !q.hasAttribute("data-l")) { q.setAttribute("data-l", "en"); q = q.previousElementSibling; }
+    }
+  }
+}
+var current = "en";
+function applySwap(h){ h.innerHTML = h.getAttribute(current === "vi" ? "data-vi-html" : "data-en-html"); if (current === "vi") h.setAttribute("lang", "vi"); else h.removeAttribute("lang"); }
+function process(root){
+  if (!root || !root.querySelectorAll) return;
+  if (root.matches && root.matches('[lang="vi"]')) handle(root);
+  Array.prototype.forEach.call(root.querySelectorAll('[lang="vi"]:not([data-lp]):not([data-l])'), handle);
+}
+function setLang(l){
+  current = l === "vi" ? "vi" : "en";
+  document.documentElement.setAttribute("data-lang", current);
+  document.documentElement.setAttribute("lang", current);
+  Array.prototype.forEach.call(document.querySelectorAll("[data-swap]"), applySwap);
+  Array.prototype.forEach.call(document.querySelectorAll("[data-setlang]"), function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-setlang") === current ? "true" : "false"); });
+  try { localStorage.setItem("ws-lang", current); } catch (e) {}
+}
+var saved = null; try { saved = localStorage.getItem("ws-lang"); } catch (e) {}
+var initial = saved || ((navigator.language || "").toLowerCase().indexOf("vi") === 0 ? "vi" : "en");
+function boot(){
+  current = initial;
+  process(document.body);
+  setLang(initial);
+  new MutationObserver(function (muts) {
+    muts.forEach(function (m) { Array.prototype.forEach.call(m.addedNodes, function (n) { if (n.nodeType === 1) process(n); }); });
+  }).observe(document.body, { childList: true, subtree: true });
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("[data-setlang]");
+    if (b) setLang(b.getAttribute("data-setlang"));
+  });
+  var tg = document.getElementById("learn-toggle"), body = document.getElementById("learn-body");
+  function openLearn(open){
+    body.hidden = !open; tg.setAttribute("aria-expanded", open ? "true" : "false");
+    tg.innerHTML = open ? '<span data-l="en">Hide the exercises ▴</span><span data-l="vi" lang="vi">Thu gọn bài tập ▴</span>' : '<span data-l="en">Open the exercises ▾</span><span data-l="vi" lang="vi">Mở bài tập ▾</span>';
+  }
+  if (tg && body) {
+    tg.addEventListener("click", function () { openLearn(body.hidden); });
+    Array.prototype.forEach.call(document.querySelectorAll('a[href="#learn"]'), function (a) { a.addEventListener("click", function () { openLearn(true); }); });
+    if (location.hash === "#learn") openLearn(true);
+  }
 }
 if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot); else boot();
 })();
