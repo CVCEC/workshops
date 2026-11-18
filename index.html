@@ -636,14 +636,24 @@ speak(text) {
 try {
 const ss = window.speechSynthesis;
 if (!ss || typeof SpeechSynthesisUtterance === "undefined") { this.setState({ ttsWarn: true }); return; }
+const voices = ss.getVoices() || [];
+const viAll = voices.filter((v) => (v.lang || "").toLowerCase().replace("_", "-").indexOf("vi") === 0);
+const plain = (v) => !/enhanced|premium|siri/i.test(v.name || "");
+const vi = viAll.find((v) => v.localService && plain(v)) || viAll.find(plain) || viAll[0];
+if (!vi && voices.length > 0) { this.setState({ ttsWarn: true }); }
 const u = new SpeechSynthesisUtterance(text);
 u.lang = "vi-VN";
 u.rate = 0.85;
-const voices = ss.getVoices() || [];
-const vi = voices.find((v) => (v.lang || "").toLowerCase().replace("_", "-").indexOf("vi") === 0);
-if (vi) { u.voice = vi; } else if (voices.length > 0) { this.setState({ ttsWarn: true }); }
-ss.cancel();
-ss.speak(u);
+if (vi) { u.voice = vi; }
+window.__ttsUtterance = u;
+let started = false;
+u.onstart = () => { started = true; };
+u.onerror = (ev) => { if (ev && ev.error !== "canceled" && ev.error !== "interrupted") { this.setState({ ttsWarn: true }); } };
+const hadQueue = ss.speaking || ss.pending;
+if (hadQueue) { ss.cancel(); }
+const go = () => { try { ss.resume(); ss.speak(u); } catch (e) { this.setState({ ttsWarn: true }); } };
+if (hadQueue) { setTimeout(go, 120); } else { go(); }
+setTimeout(() => { if (!started && window.__ttsUtterance === u) { ss.cancel(); this.setState({ ttsWarn: true }); } }, 3000);
 } catch (e) {
 this.setState({ ttsWarn: true });
 }
